@@ -25,7 +25,7 @@ body, html {
 }
 
 h1 {
-    color: #afe1ff;
+    color: #fff;
 }
 
 main {
@@ -45,13 +45,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 2s ease-in-out, filter 2s ease-in-out;
 }
 
 header > img {
     width: 6em;
     height: 6em;
     border-radius: 100%;
-    border: 1px solid #afe1ff;
+    border: 2px solid #afe1ff;
     box-shadow: #afe1ff 0px 2px 8px 0px;
 }
 
@@ -67,6 +70,9 @@ ul {
     margin: 0 auto;
     padding: 2em;
     max-width: 400px;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 2s ease-in-out, filter 2s ease-in-out;
 }
 
 ul > li {

@@ -20,9 +20,18 @@
                 midtoneColor: 0xff2000,
                 lowlightColor: 0x910303,
                 baseColor: 0xf0ac32,
-                speed: 3,
+                speed: 5,
                 zoom: 0.85,
             })
+
+            setTimeout(() => {
+                const ul = document.querySelector('ul')
+                ul.style.opacity = 1
+                ul.style.filter = 'blur(0px)'
+                const header = document.querySelector('header')
+                header.style.opacity = 1
+                header.style.filter = 'blur(0px)'
+            }, 1000)
         })   
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
