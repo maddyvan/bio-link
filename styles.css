@@ -85,3 +85,7 @@ ul > li > a {
 a {
     color: var(--default-text-color);
 }
+
+iframe {
+    margin: auto;
+}
