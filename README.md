@@ -1,2 +1,3 @@
 # bio-link
-diy linktree made with html, css, and javascript
+personal website made with html, css, and javascript. 
+randomly updated by maddy van since 2022
