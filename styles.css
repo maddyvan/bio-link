@@ -2,6 +2,9 @@
     --default-text-color: #D8CBC7;
     --background-color: black;
     --shadow-effect-color: var(--default-text-color);
+    --red: #f00;
+    --green: #0f0;
+    --hoverglow-red: #e13426;
   }
 
 body, html {
@@ -74,7 +77,7 @@ ul > li {
 }
 
 ul > li:hover {
-    box-shadow: #e13426 0px 0px 10px 5px, inset #e13426 0px 0px 10px 2px;
+    box-shadow: var(--hoverglow-red) 0px 0px 10px 5px, inset var(--hoverglow-red) 0px 0px 10px 2px;
 }
 
 ul > li > a {
@@ -87,9 +90,21 @@ ul > li > a {
 
 a {
     color: var(--default-text-color);
+    text-decoration: underline;
+    text-underline-offset: 4px; /* Adjust the vertical offset */
+    text-decoration-skip-ink: auto; /* Ensure the underline skips ink correctly */
 }
 
 iframe {
     margin: auto;
-    
 }
+
+
+.hover-green:hover {
+    color: limegreen;
+}
+
+
+
+
+
