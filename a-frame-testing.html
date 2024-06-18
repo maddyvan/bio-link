@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Scene - A-Frame</title>
+  <meta name="description" content="Basic Scene - A-Frame">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="skyTexture" src="skybox with stars.png">
+    </a-assets>
+
+    <a-sky height="1024" radius="40" src="#skyTexture" theta-length="90" width="1024"></a-sky>
+    <a-light type="ambient" color="#006600"></a-light>
+    <a-light type="point" intensity="2" position="2 4 4" color="#006600"></a-light>
+    <a-plane color="#111" rotation="-90 0 0" height="100" width="100"></a-plane>
+    <a-text value="maddyv.xyz" color="#fff" position="-0.9 1.3 -3" scale="1.5 1.5 1.5"></a-text>
+
+    <a-camera>
+      <a-cursor color="#FAFAFA"></a-cursor>
+    </a-camera>
+  </a-scene>
+</body>
+</html>

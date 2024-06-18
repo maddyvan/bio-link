@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="./styles.css"/> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Campfire Example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.7/aframe/build/aframe-ar.js"></script>
     <style>
-        #cameraFeed {
-            width: 100%;
-            height: auto;
-        }
+        body { margin: 0; overflow: hidden; }
+        #cameraFeed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
     </style>
 </head>
-
 <body>
-    <h1>WebRTC Example</h1>
-    <video id="cameraFeed" autoplay playsinline></video>
-    <p>This page is currently in development (i.e. in the backlog). Come back soon!</p>
-
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity 
+                gltf-model="url(https://cdn.glitch.com/a514a8e1-28f2-4ec4-a0fa-d2b6f3e5a82c%2Fcampfire.glb?v=1627917037514)" 
+                scale="0.05 0.05 0.05" 
+                position="0 0 0">
+            </a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
     <script>
-        navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-            var videoElement = document.getElementById('cameraFeed');
-            videoElement.srcObject = stream;
-            videoElement.play(); // Ensure video is playing
-        })
-        .catch(function(err) {
-            console.error('Error accessing camera:', err);
+        AFRAME.registerComponent('log', {
+            schema: { type: 'string' },
+            init: function () {
+                console.log(this.data);
+            }
         });
+        document.querySelector('a-entity[gltf-model]').setAttribute('log', 'Campfire model is being loaded');
     </script>
 </body>
-
 </html>
