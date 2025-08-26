@@ -38,26 +38,83 @@
                 color: var(--default-text-color);
                 text-align: center;
             }
+
+            .loading {
+                text-align: center;
+                color: var(--default-text-color);
+                font-style: italic;
+            }
         </style>
     </head>
     
     <body>
         <main>
             <p>animal-picks</p>            
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <img src="./animal-picks/Fifi on chair.JPG" alt="Fifi on chair">
-                    <div class="photo-caption">Fifi on chair.jpg</div>
-                </div>
-                
-                <div class="photo-item">
-                    <img src="./animal-picks/Kiki in sun.JPG" alt="Kiki in sun">
-                    <div class="photo-caption">Kiki in sun.jpg</div>
-                </div>
+            <div class="photo-grid" id="photo-grid">
+                <div class="loading">Loading photos...</div>
             </div>
             
             <br><br>
             <footer><a href="about.html" class="hover-green">back to about</a></footer>
         </main>
+
+        <script>
+            // List of known images in the animal-picks folder
+            const knownImages = [
+                'Fifi-on-chair.JPG',
+                'Kiki-in-sun.JPG',
+                'pippi-please-play.JPG',
+                'skylar.jpg',
+                'skylar-trespassing-by-fire.JPG',
+                'fifi-stretching.jpeg',
+                'ludmila-in-heat.jpeg',
+                'pixie-old-lady-foster-with-hands.JPG',
+                'kiki-plotting.JPG',
+                'pippi.jpeg',
+                'fifi-staring.JPG',
+            ];
+
+            // Function to create a photo item element
+            function createPhotoItem(imageName) {
+                const photoItem = document.createElement('div');
+                photoItem.className = 'photo-item';
+                
+                const img = document.createElement('img');
+                const imagePath = `./animal-picks/${imageName}`;
+                img.src = imagePath;
+                img.alt = imageName.replace('.JPG', '').replace('.jpg', '');
+                
+                const caption = document.createElement('div');
+                caption.className = 'photo-caption';
+                caption.textContent = imageName;
+                
+                photoItem.appendChild(img);
+                photoItem.appendChild(caption);
+                
+                return photoItem;
+            }
+
+            // Function to load and display photos from a given array
+            function loadPhotosFromArray(imageArray) {
+                const photoGrid = document.getElementById('photo-grid');
+                photoGrid.innerHTML = ''; // Clear loading message
+                
+                // Add each image from the array
+                imageArray.forEach(imageName => {
+                    const photoItem = createPhotoItem(imageName);
+                    photoGrid.appendChild(photoItem);
+                });
+            }
+
+            // Function to load and display photos (legacy function for backward compatibility)
+            function loadPhotos() {
+                loadPhotosFromArray(knownImages);
+            }
+            // Initialize when page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('Page loaded, loading photos...');
+                loadPhotosFromArray(knownImages);
+            });
+        </script>
     </body>
 </html>
