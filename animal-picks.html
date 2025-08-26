@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./styles.css"/> 
+        <title>animal-picks</title>
+        <style>
+            .photo-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2em;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 1em;
+            }
+            
+            .photo-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .photo-item img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+                /*box-shadow: var(--shadow-effect-color) 0px 0px 6px 2px;*/
+                transition: box-shadow 0.3s ease-in-out;
+            }
+            
+            .photo-item img:hover {
+                box-shadow: var(--hoverglow-red) 0px 0px 10px 5px;
+            }
+            
+            .photo-caption {
+                margin-top: 1em;
+                font-size: 0.9em;
+                color: var(--default-text-color);
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <main>
+            <p>animal-picks</p>            
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="./animal-picks/Fifi on chair.JPG" alt="Fifi on chair">
+                    <div class="photo-caption">Fifi on chair.jpg</div>
+                </div>
+                
+                <div class="photo-item">
+                    <img src="./animal-picks/Kiki in sun.JPG" alt="Kiki in sun">
+                    <div class="photo-caption">Kiki in sun.jpg</div>
+                </div>
+            </div>
+            
+            <br><br>
+            <footer><a href="about.html" class="hover-green">back to about</a></footer>
+        </main>
+    </body>
+</html>
