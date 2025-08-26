@@ -14,7 +14,7 @@
         XR developer and designer.
         <br>
         <br>
-        <a href="animal-picks.html" class="hover-green">Animal lover</a>.
+        <a href="animal-picks.html" class="hover-green" id="animal-link">Animal lover</a>.
         <br>
         <br>
         <a href="https://open.spotify.com/user/maddyvanh" class="hover-green" id="music-link">Music enthusiast</a>.
@@ -24,7 +24,7 @@
         <br><br>
         I grew up in Owensboro, Kentucky.
         <br><br>
-        Here's <a href ="Maddy Van Hulse - 2024 Resume.pdf"  class="hover-green">my resume</a>.
+        Here's <a href ="Maddy Van Hulse Resume 2025.pdf"  class="hover-green">my resume</a>.
         <br><br>
         You can preview some of my work on <a href="https://github.com/maddyvan" class="hover-green">GitHub</a> and <a href="https://www.youtube.com/channel/UCAG7yD9Gq3qsGdmt3VoIQww/featured" class="hover-green">Youtube</a>.
         <br><br>
@@ -43,6 +43,16 @@
     
             musicLink.addEventListener('mouseout', () => {
                 musicLink.textContent = 'Music enthusiast';
+            });
+
+            const animalLink = document.getElementById('animal-link');
+    
+            animalLink.addEventListener('mouseover', () => {
+                animalLink.textContent = 'animal-pic-picks';
+            });
+    
+            animalLink.addEventListener('mouseout', () => {
+                animalLink.textContent = 'Animal lover';
             });
         </script>
 
